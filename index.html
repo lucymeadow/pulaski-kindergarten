@@ -5,123 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Will's Kindergarten — Pulaski 2026–27</title>
-<style>
-:root{
-  --bg:#f6f7f9; --card:#fff; --ink:#14161a; --muted:#5c6470; --line:#e3e6ea;
-  --accent:#2f6feb; --accent-soft:#eaf1ff;
-  --ok:#1a7f4b; --ok-soft:#e6f5ec;
-  --warn:#a8590a; --warn-soft:#fdf1e0;
-  --stop:#b3261e; --stop-soft:#fdeceb;
-  --radius:12px;
-}
-@media (prefers-color-scheme:dark){
-  :root{
-    --bg:#0f1216; --card:#171b21; --ink:#e8eaed; --muted:#98a1ad; --line:#262c34;
-    --accent:#6c9bff; --accent-soft:#182338;
-    --ok:#5cc98d; --ok-soft:#12241a;
-    --warn:#e0a856; --warn-soft:#291f11;
-    --stop:#f2867d; --stop-soft:#2a1614;
-  }
-}
-*{box-sizing:border-box}
-body{
-  margin:0; background:var(--bg); color:var(--ink);
-  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  -webkit-font-smoothing:antialiased;
-}
-.wrap{max-width:940px;margin:0 auto;padding:0 20px 80px}
-header{padding:44px 0 28px;border-bottom:1px solid var(--line);margin-bottom:28px}
-h1{margin:0 0 6px;font-size:2rem;letter-spacing:-.02em}
-.sub{color:var(--muted);margin:0}
-.countdown{
-  display:inline-flex;align-items:baseline;gap:8px;margin-top:18px;
-  background:var(--accent-soft);color:var(--accent);
-  padding:10px 16px;border-radius:999px;font-weight:600;font-size:.95rem
-}
-.countdown b{font-size:1.5rem;letter-spacing:-.02em}
-
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
-.fact{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
-.fact .k{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:4px}
-.fact .v{font-weight:650;font-size:1.02rem}
-
-nav{position:sticky;top:0;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--line);z-index:20;margin-bottom:32px}
-nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0}
-nav a{
-  display:block;padding:6px 12px;border-radius:8px;text-decoration:none;
-  color:var(--muted);font-size:.88rem;font-weight:550
-}
-nav a:hover{background:var(--card);color:var(--ink)}
-
-section{margin-bottom:44px;scroll-margin-top:70px}
-h2{font-size:1.35rem;letter-spacing:-.01em;margin:0 0 6px;display:flex;align-items:center;gap:10px}
-h2 .n{
-  width:26px;height:26px;flex:none;border-radius:7px;background:var(--accent-soft);color:var(--accent);
-  font-size:.8rem;display:grid;place-items:center;font-weight:700
-}
-.lede{color:var(--muted);margin:0 0 20px}
-
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-bottom:16px}
-.card h3{margin:0 0 4px;font-size:1.02rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.card .meta{color:var(--muted);font-size:.87rem;margin:0 0 14px}
-.card .meta a{color:var(--accent)}
-
-.progress{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;margin-bottom:24px}
-.progress .row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
-.progress .lab{font-weight:650}
-.progress .cnt{color:var(--muted);font-size:.9rem}
-.bar{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
-.bar span{display:block;height:100%;background:var(--ok);border-radius:99px;transition:width .4s ease}
-
-ul.tasks{list-style:none;margin:0;padding:0}
-ul.tasks li{display:flex;gap:11px;padding:9px 0;border-top:1px solid var(--line);align-items:flex-start}
-ul.tasks li:first-child{border-top:0}
-.box{
-  width:19px;height:19px;flex:none;margin-top:2px;border-radius:5px;
-  border:1.5px solid var(--muted);display:grid;place-items:center;font-size:12px;color:#fff
-}
-li.done .box{background:var(--ok);border-color:var(--ok)}
-li.done .txt{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
-.txt{flex:1}
-.txt .note{display:block;color:var(--muted);font-size:.87rem;margin-top:3px;text-decoration:none}
-
-.tag{
-  display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
-  padding:2.5px 7px;border-radius:5px;vertical-align:middle
-}
-.tag.now{background:var(--stop-soft);color:var(--stop)}
-.tag.soon{background:var(--warn-soft);color:var(--warn)}
-.tag.done{background:var(--ok-soft);color:var(--ok)}
-.tag.open{background:var(--warn-soft);color:var(--warn)}
-
-.qa{border-top:1px solid var(--line);padding:14px 0}
-.qa:first-of-type{border-top:0}
-.qa .q{font-weight:650;margin:0 0 5px;display:flex;gap:9px;align-items:baseline;flex-wrap:wrap}
-.qa .a{margin:0;color:var(--muted);font-size:.94rem}
-.qa .a strong{color:var(--ink)}
-
-table{width:100%;border-collapse:collapse;font-size:.93rem}
-th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:650}
-tr:last-child td{border-bottom:0}
-td.num{white-space:nowrap;font-variant-numeric:tabular-nums}
-
-.callout{border-left:3px solid var(--warn);background:var(--warn-soft);padding:14px 16px;border-radius:0 8px 8px 0;margin:16px 0}
-.callout.stop{border-color:var(--stop);background:var(--stop-soft)}
-.callout p{margin:0}
-.callout p+p{margin-top:8px}
-.callout .h{font-weight:700;display:block;margin-bottom:4px}
-
-footer{border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:.85rem}
-footer code{background:var(--card);padding:1px 5px;border-radius:4px;font-size:.9em}
-a{color:var(--accent)}
-.pill{font-size:.78rem;color:var(--muted);font-weight:500}
-@media print{
-  nav,.countdown{display:none}
-  body{background:#fff}
-  .card,.progress{break-inside:avoid}
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
@@ -140,6 +24,7 @@ a{color:var(--accent)}
 </div>
 
 <nav><ul>
+  <li><a href="calendar.html">Full calendar &rarr;</a></li>
   <li><a href="#week">This week</a></li>
   <li><a href="#questions">Open questions</a></li>
   <li><a href="#firstday">First day</a></li>
@@ -163,7 +48,7 @@ a{color:var(--accent)}
 
 <section id="questions">
   <h2><span class="n">2</span> Open questions</h2>
-  <p class="lede">Three are already resolved — don't spend a phone call on them.</p>
+  <p class="lede">Six are resolved — don't spend a phone call on those.</p>
   <div class="card" id="qa"></div>
 </section>
 
@@ -283,8 +168,9 @@ a{color:var(--accent)}
 
 <section id="calendar">
   <h2><span class="n">6</span> Days off</h2>
-  <p class="lede">From the official CPS 2026–27 Family Calendar. School runs Mon Aug 24 through Fri Jun 11, both full days.</p>
+  <p class="lede">School runs Mon Aug 24 through Fri Jun 11. <strong>34 weekdays off</strong> across the year — the full month-by-month view, with the A–F rotation letters and every activity, is on the <a href="calendar.html">calendar page</a>.</p>
   <div class="card">
+    <h3>Coming up</h3>
     <table>
       <thead><tr><th>Date</th><th>What</th><th>Note</th></tr></thead>
       <tbody>
@@ -296,14 +182,9 @@ a{color:var(--accent)}
         <tr><td class="num">Wed Nov 11</td><td>PD day</td><td></td></tr>
         <tr><td class="num">Nov 23–27</td><td>Thanksgiving — full week off</td><td>Pulaski's own calendar marks Nov 23–25 as non-attendance. The district calendar disagrees; trust Pulaski's. Back Mon Nov 30.</td></tr>
         <tr><td class="num">Dec 21 – Jan 1</td><td>Winter break</td><td></td></tr>
-        <tr><td class="num">Jan 4, 18, 29</td><td>PD, MLK Day, PD</td><td></td></tr>
-        <tr><td class="num">Feb 15, 23</td><td>Presidents Day, PD</td><td></td></tr>
-        <tr><td class="num">Mar 22–26</td><td>Spring break</td><td></td></tr>
-        <tr><td class="num">Apr 6, 12</td><td>PD, parent–teacher conferences</td><td></td></tr>
-        <tr><td class="num">Mon May 31</td><td>Memorial Day</td><td></td></tr>
       </tbody>
     </table>
-    <p class="meta" style="margin:14px 0 0">June 15, 16, 17, 21 and 22 are designated emergency make-up days — school runs then only if weather closures push the year below the state minimum. Worth not booking anything unmovable in mid-June.</p>
+    <p class="meta" style="margin:14px 0 0">Spring term, emergency make-up days, and the rest: see the <a href="calendar.html">full calendar</a>.</p>
   </div>
 </section>
 
@@ -331,13 +212,27 @@ a{color:var(--accent)}
     <table>
       <tbody>
         <tr><td>Pulaski main office</td><td class="num">(773) 534-4390</td></tr>
-        <tr><td>Apollo before/after care</td><td class="num">855-543-7277 · office [at] apolloafterschool.com</td></tr>
+        <tr><td>Apollo before/after care</td><td class="num">855-543-7277 · office [at] apolloafterschool.com<br><a href="https://apollo-pulaski.jumbula.com/">apollo-pulaski.jumbula.com</a> — login saved</td></tr>
         <tr><td>ChicagoSMA enrichment</td><td class="num">info [at] chicagosma.com</td></tr>
         <tr><td>Aspen help — Ms. Colon, parent resource coordinator</td><td class="num">nnavacolon [at] cps.edu</td></tr>
         <tr><td>Principal / Assistant Principal</td><td>Diana Racasi · Lisa Waltmire</td></tr>
         <tr><td>Nurses</td><td>Room 015</td></tr>
         <tr><td>RGC Coordinator</td><td>Ms. Barbosa, Room 214</td></tr>
         <tr><td>Counselors</td><td>Ms. Echevarria (Rm 104) · Ms. Imperiale (by the PE office)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Portals and links</h3>
+    <table>
+      <tbody>
+        <tr><td><strong>Apollo</strong> — enrolment, billing, payment card</td><td><a href="https://apollo-pulaski.jumbula.com/">apollo-pulaski.jumbula.com</a><br><span class="pill">Login saved. Account is under Will's dad's email, so receipts go to him.</span></td></tr>
+        <tr><td><strong>Pulaski ePay</strong> — the $150 school fee</td><td><a href="https://magic.collectorsolutions.com/magic-ui/Login/cps-31211-pulaski-international">ePay portal</a><br><span class="pill">No login needed, but you need Will's Student ID.</span></td></tr>
+        <tr><td><strong>School website</strong> — supply lists, back-to-school info</td><td><a href="https://www.pulaskischool.org/">pulaskischool.org</a></td></tr>
+        <tr><td><strong>Aspen</strong> — placement, Student ID, grades</td><td><a href="https://cps.edu/Pages/parentresources.aspx">CPS parent resources</a></td></tr>
+        <tr><td><strong>Lunch menus</strong></td><td><a href="https://cps.edu/menus">cps.edu/menus</a></td></tr>
+        <tr><td><strong>ChicagoSMA</strong> — enrichment registration</td><td>info [at] chicagosma.com</td></tr>
       </tbody>
     </table>
   </div>
