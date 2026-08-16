@@ -250,7 +250,21 @@ for(let y=2026,m=7; !(y===2027&&m===6); m++){ if(m>11){m=0;y++;} months.push([y,
 months.forEach(([y,m])=>{
   const first=new Date(y,m,1), dim=new Date(y,m+1,0).getDate();
   let pad=(first.getDay()+6)%7;   // Monday-first
-  let html='<div class="month"><h3>'+MN[m]+' '+y+'</h3><div class="grid">'
+
+  // school days vs weekdays off, for the month header
+  let inSchool=0, daysOff=0;
+  for(let d=1; d<=dim; d++){
+    const k=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const g=new Date(y,m,d).getDay();
+    if(g===0||g===6) continue;
+    if(k<TERM_START||k>TERM_END) continue;
+    if(OFF[k]) daysOff++; else inSchool++;
+  }
+  const summary = inSchool
+    ? inSchool+' school day'+(inSchool===1?'':'s') + (daysOff? ' · '+daysOff+' off':'')
+    : (daysOff? daysOff+' weekday'+(daysOff===1?'':'s')+' off' : 'no school this month');
+
+  let html='<div class="month"><h3>'+MN[m]+' '+y+'<span class="mcount">'+summary+'</span></h3><div class="grid">'
     + ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(d=>'<div class="dow">'+d+'</div>').join('');
   for(let p=0;p<pad;p++) html+='<div class="cell pad"></div>';
   for(let day=1;day<=dim;day++){
