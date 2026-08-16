@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Will's Kindergarten — Pulaski 2026–27</title>
+<style>
+:root{
+  --bg:#f6f7f9; --card:#fff; --ink:#14161a; --muted:#5c6470; --line:#e3e6ea;
+  --accent:#2f6feb; --accent-soft:#eaf1ff;
+  --ok:#1a7f4b; --ok-soft:#e6f5ec;
+  --warn:#a8590a; --warn-soft:#fdf1e0;
+  --stop:#b3261e; --stop-soft:#fdeceb;
+  --radius:12px;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0f1216; --card:#171b21; --ink:#e8eaed; --muted:#98a1ad; --line:#262c34;
+    --accent:#6c9bff; --accent-soft:#182338;
+    --ok:#5cc98d; --ok-soft:#12241a;
+    --warn:#e0a856; --warn-soft:#291f11;
+    --stop:#f2867d; --stop-soft:#2a1614;
+  }
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:940px;margin:0 auto;padding:0 20px 80px}
+header{padding:44px 0 28px;border-bottom:1px solid var(--line);margin-bottom:28px}
+h1{margin:0 0 6px;font-size:2rem;letter-spacing:-.02em}
+.sub{color:var(--muted);margin:0}
+.countdown{
+  display:inline-flex;align-items:baseline;gap:8px;margin-top:18px;
+  background:var(--accent-soft);color:var(--accent);
+  padding:10px 16px;border-radius:999px;font-weight:600;font-size:.95rem
+}
+.countdown b{font-size:1.5rem;letter-spacing:-.02em}
+
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.fact .k{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:4px}
+.fact .v{font-weight:650;font-size:1.02rem}
+
+nav{position:sticky;top:0;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--line);z-index:20;margin-bottom:32px}
+nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0}
+nav a{
+  display:block;padding:6px 12px;border-radius:8px;text-decoration:none;
+  color:var(--muted);font-size:.88rem;font-weight:550
+}
+nav a:hover{background:var(--card);color:var(--ink)}
+
+section{margin-bottom:44px;scroll-margin-top:70px}
+h2{font-size:1.35rem;letter-spacing:-.01em;margin:0 0 6px;display:flex;align-items:center;gap:10px}
+h2 .n{
+  width:26px;height:26px;flex:none;border-radius:7px;background:var(--accent-soft);color:var(--accent);
+  font-size:.8rem;display:grid;place-items:center;font-weight:700
+}
+.lede{color:var(--muted);margin:0 0 20px}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.card h3{margin:0 0 4px;font-size:1.02rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card .meta{color:var(--muted);font-size:.87rem;margin:0 0 14px}
+.card .meta a{color:var(--accent)}
+
+.progress{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;margin-bottom:24px}
+.progress .row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.progress .lab{font-weight:650}
+.progress .cnt{color:var(--muted);font-size:.9rem}
+.bar{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--ok);border-radius:99px;transition:width .4s ease}
+
+ul.tasks{list-style:none;margin:0;padding:0}
+ul.tasks li{display:flex;gap:11px;padding:9px 0;border-top:1px solid var(--line);align-items:flex-start}
+ul.tasks li:first-child{border-top:0}
+.box{
+  width:19px;height:19px;flex:none;margin-top:2px;border-radius:5px;
+  border:1.5px solid var(--muted);display:grid;place-items:center;font-size:12px;color:#fff
+}
+li.done .box{background:var(--ok);border-color:var(--ok)}
+li.done .txt{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
+.txt{flex:1}
+.txt .note{display:block;color:var(--muted);font-size:.87rem;margin-top:3px;text-decoration:none}
+
+.tag{
+  display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  padding:2.5px 7px;border-radius:5px;vertical-align:middle
+}
+.tag.now{background:var(--stop-soft);color:var(--stop)}
+.tag.soon{background:var(--warn-soft);color:var(--warn)}
+.tag.done{background:var(--ok-soft);color:var(--ok)}
+.tag.open{background:var(--warn-soft);color:var(--warn)}
+
+.qa{border-top:1px solid var(--line);padding:14px 0}
+.qa:first-of-type{border-top:0}
+.qa .q{font-weight:650;margin:0 0 5px;display:flex;gap:9px;align-items:baseline;flex-wrap:wrap}
+.qa .a{margin:0;color:var(--muted);font-size:.94rem}
+.qa .a strong{color:var(--ink)}
+
+table{width:100%;border-collapse:collapse;font-size:.93rem}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:650}
+tr:last-child td{border-bottom:0}
+td.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+
+.callout{border-left:3px solid var(--warn);background:var(--warn-soft);padding:14px 16px;border-radius:0 8px 8px 0;margin:16px 0}
+.callout.stop{border-color:var(--stop);background:var(--stop-soft)}
+.callout p{margin:0}
+.callout p+p{margin-top:8px}
+.callout .h{font-weight:700;display:block;margin-bottom:4px}
+
+footer{border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:.85rem}
+footer code{background:var(--card);padding:1px 5px;border-radius:4px;font-size:.9em}
+a{color:var(--accent)}
+.pill{font-size:.78rem;color:var(--muted);font-weight:500}
+@media print{
+  nav,.countdown{display:none}
+  body{background:#fff}
+  .card,.progress{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Will's Kindergarten</h1>
+  <p class="sub">Pulaski International School &middot; RGC EL G/BIL &middot; School year 2026–27</p>
+  <div class="countdown" id="cd"></div>
+</header>
+
+<div class="facts">
+  <div class="fact"><div class="k">Teacher</div><div class="v">Ms. Colletti</div></div>
+  <div class="fact"><div class="k">Room</div><div class="v">002B &middot; Modular</div></div>
+  <div class="fact"><div class="k">First day</div><div class="v">Mon Aug 24</div></div>
+  <div class="fact"><div class="k">Hours</div><div class="v">8:45–3:45</div></div>
+</div>
+
+<nav><ul>
+  <li><a href="#week">This week</a></li>
+  <li><a href="#questions">Open questions</a></li>
+  <li><a href="#firstday">First day</a></li>
+  <li><a href="#routine">Routine</a></li>
+  <li><a href="#money">Money</a></li>
+  <li><a href="#calendar">Days off</a></li>
+  <li><a href="#supplies">Supplies</a></li>
+  <li><a href="#contacts">Contacts</a></li>
+</ul></nav>
+
+<div class="progress">
+  <div class="row"><span class="lab">This week's progress</span><span class="cnt" id="cnt"></span></div>
+  <div class="bar"><span id="barfill" style="width:0%"></span></div>
+</div>
+
+<section id="week">
+  <h2><span class="n">1</span> This week — Aug 17–21</h2>
+  <p class="lede">Eight open questions collapse into three conversations plus a shopping trip. Teachers are in district PD all week, so Thursday's meet-and-greet is realistically the only face time with Ms. Colletti before day one.</p>
+  <div id="groups"></div>
+</section>
+
+<section id="questions">
+  <h2><span class="n">2</span> Open questions</h2>
+  <p class="lede">Three are already resolved — don't spend a phone call on them.</p>
+  <div class="card" id="qa"></div>
+</section>
+
+<section id="firstday">
+  <h2><span class="n">3</span> First day — Monday, August 24</h2>
+
+  <div class="callout stop">
+    <p><span class="h">The door is still unknown</span>
+    Nobody has told us which entrance to use. Will is in the <strong>Modular Building</strong>, so don't assume Door 1 — that's the Main Building side entrance on McLean used for 5&nbsp;PM pickup. The principal's opening-day logistics letter is the official source and hasn't arrived. If nothing lands by Friday Aug 21, call the office.</p>
+  </div>
+
+  <div class="card">
+    <h3>How Monday runs</h3>
+    <table>
+      <tr><td class="num">before 8:45</td><td>Apollo before-care — starts today, 5 days a week</td></tr>
+      <tr><td class="num">8:45 AM</td><td><strong>School begins</strong> — Room 002B, Modular Building</td></tr>
+      <tr><td class="num">~9:00 AM</td><td>FOP BooHoo/Yahoo Breakfast, main building courtyard. <em>Parents only</em> — Will is in class. Drop him at the modular first, then walk over.</td></tr>
+      <tr><td class="num">10:00–10:30</td><td>Recess, then lunch. Lunch is free and provided by CPS.</td></tr>
+      <tr><td class="num">3:45 PM</td><td>School ends. SMA coordinators collect Modular Building kids <strong>from the classroom</strong> — Will doesn't cross to the main cafeteria alone.</td></tr>
+      <tr><td class="num">4:00–5:00 PM</td><td>Hip Hop Dance Camp (Aug 24–27, already paid)</td></tr>
+      <tr><td class="num">5:00 PM</td><td>Pickup at Main Building <strong>Door 1 on McLean</strong> — or escorted back to Apollo aftercare</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Pack the night before</h3>
+    <ul class="tasks" id="packlist"></ul>
+    <p class="meta" style="margin:14px 0 0">Lunch does not need packing — CPS provides free breakfast, lunch and snacks to all students. But note the first lunch block eats at <strong>10:30 AM</strong>, so breakfast matters and he'll be hungry well before 3:45.</p>
+  </div>
+</section>
+
+<section id="routine">
+  <h2><span class="n">4</span> The routine from Aug 31</h2>
+  <p class="lede">Week one is camp week. The real pattern starts Monday Aug 31, when ChicagoSMA Session 1 begins — Will is booked Monday through Thursday.</p>
+
+  <div class="card">
+    <table>
+      <thead><tr><th>Day</th><th>4–5 PM class</th><th>Bring</th><th>Sessions</th></tr></thead>
+      <tbody>
+        <tr><td>Monday</td><td>Happy Hands (art)</td><td>Nothing — materials provided</td><td class="num">10</td></tr>
+        <tr><td>Tuesday</td><td>Piano</td><td>Book — pending SMA's answer</td><td class="num">12</td></tr>
+        <tr><td>Wednesday</td><td>Jr. Hip Hop</td><td>Movement clothes</td><td class="num">12</td></tr>
+        <tr><td>Thursday</td><td>Young Rembrandts (drawing)</td><td>Nothing — materials provided</td><td class="num">13</td></tr>
+        <tr><td>Friday</td><td>—</td><td>Apollo aftercare only</td><td class="num">—</td></tr>
+      </tbody>
+    </table>
+    <p class="meta" style="margin:14px 0 0">Pianos are provided for in-class use, so there's no instrument to carry — but the K–6th checklist expects a piano or keyboard at home for practice between lessons.</p>
+  </div>
+
+  <div class="callout">
+    <p><span class="h">The A–F rotation, and what's missing from it</span>
+    Essential subjects — PE, art, music, Spanish, library, technology — run on a six-day A–F rotation rather than fixed weekdays, so a scheduled day off never costs the same subject twice. Pulaski has published the calendar, and <strong>the first day, Mon Aug 24, is Day A</strong>; then B, C, D, E on Aug 25–28 and F on Aug 31.</p>
+    <p>But the letter-to-subject mapping is <strong>blank on the form</strong> — each homeroom fills in its own. So Ms. Colletti is the one who can tell you which letter means gym shoes and which means library books. Worth asking in the same message as the after-school schedule.</p>
+  </div>
+
+  <div class="callout">
+    <p><span class="h">Decision point around mid-September</span>
+    Four after-school classes plus five-day before/after care is a lot for a brand-new kindergartner. ChicagoSMA's refund ladder: 8+ weeks before start is 100%, six weeks before through the second class is 70%, and after the second class there's <strong>no refund at all</strong>. Session 1 starts Aug 31, so the 70% window closes around mid-September. If it looks like too much, decide then — not in October.</p>
+  </div>
+</section>
+
+<section id="money">
+  <h2><span class="n">5</span> Money</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>Item</th><th>Amount</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>ChicagoSMA Session 1 — 4 classes</td><td class="num">$1,463.08</td><td><span class="tag done">paid</span></td></tr>
+        <tr><td>Hip Hop Camp, Aug 24–27</td><td class="num">$336.82</td><td><span class="tag done">paid</span></td></tr>
+        <tr><td>Apollo — first payment</td><td class="num">$466.00</td><td><span class="tag done">paid</span></td></tr>
+        <tr><td>Apollo — remaining installments</td><td class="num">~$3,870</td><td><span class="tag soon">verify</span></td></tr>
+        <tr><td>Pulaski school fee</td><td class="num">$150.00</td><td><span class="tag now">due Sep 15</span></td></tr>
+        <tr><td>Supplies + piano book</td><td class="num">varies</td><td><span class="tag now">to buy</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout stop">
+    <p><span class="h">The Apollo receipt contradicts itself</span>
+    It says <em>Total $466 / Paid $466 / Balance $0.00</em> — which reads like the year is settled. But the table directly below lists <strong>nine unpaid installments of $430</strong>, on the 14th of each month from September through May. Likely reading: the $466 covered month one ($429) plus a $35 annual registration fee and a $2 card fee, and roughly <strong>$3,870 is still to come</strong>.</p>
+    <p>Worth a call to confirm whether autopay is active and on which card. The account is registered under Will's dad's email, so the billing notices go to him.</p>
+  </div>
+
+  <div class="callout">
+    <p><span class="h">The $150 fee has two different deadlines</span>
+    The kindergarten supply list says <strong>September 15</strong>. The principal's letter says <strong>September 30</strong>. Paying by the 15th satisfies both. Pay through the ePay link on the school website — no account needed, but you need Will's Student ID, which is in Aspen or available from the office.</p>
+  </div>
+</section>
+
+<section id="calendar">
+  <h2><span class="n">6</span> Days off</h2>
+  <p class="lede">From the official CPS 2026–27 Family Calendar. School runs Mon Aug 24 through Fri Jun 11, both full days.</p>
+  <div class="card">
+    <table>
+      <thead><tr><th>Date</th><th>What</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td class="num">Mon Sep 7</td><td>Labor Day</td><td></td></tr>
+        <tr><td class="num">Fri Sep 25</td><td>School improvement / PD day</td><td>Easy to miss — SMA only runs Mon–Thu, so Friday closures never show up in their calendar</td></tr>
+        <tr><td class="num">Mon Oct 12</td><td>Indigenous Peoples' Day</td><td></td></tr>
+        <tr><td class="num">Mon Nov 2</td><td>Parent–teacher conferences</td><td>Q1 report cards picked up</td></tr>
+        <tr><td class="num">Tue Nov 3</td><td>General Election Day</td><td></td></tr>
+        <tr><td class="num">Wed Nov 11</td><td>PD day</td><td></td></tr>
+        <tr><td class="num">Nov 23–27</td><td>Thanksgiving — full week off</td><td>Pulaski's own calendar marks Nov 23–25 as non-attendance. The district calendar disagrees; trust Pulaski's. Back Mon Nov 30.</td></tr>
+        <tr><td class="num">Dec 21 – Jan 1</td><td>Winter break</td><td></td></tr>
+        <tr><td class="num">Jan 4, 18, 29</td><td>PD, MLK Day, PD</td><td></td></tr>
+        <tr><td class="num">Feb 15, 23</td><td>Presidents Day, PD</td><td></td></tr>
+        <tr><td class="num">Mar 22–26</td><td>Spring break</td><td></td></tr>
+        <tr><td class="num">Apr 6, 12</td><td>PD, parent–teacher conferences</td><td></td></tr>
+        <tr><td class="num">Mon May 31</td><td>Memorial Day</td><td></td></tr>
+      </tbody>
+    </table>
+    <p class="meta" style="margin:14px 0 0">June 15, 16, 17, 21 and 22 are designated emergency make-up days — school runs then only if weather closures push the year below the state minimum. Worth not booking anything unmovable in mid-June.</p>
+  </div>
+</section>
+
+<section id="supplies">
+  <h2><span class="n">7</span> Supplies</h2>
+  <p class="lede">About half the school list is marked as included in the “First Day Box Set” — a pre-packaged kit ordered separately. If that was never ordered, everything below needs buying.</p>
+  <div class="card">
+    <h3>Buy regardless</h3>
+    <p class="meta">Not part of the kit.</p>
+    <ul class="tasks" id="buylist"></ul>
+  </div>
+  <div class="card">
+    <h3>In the kit — skip if it was ordered</h3>
+    <p class="meta">Folders (2 red + 2 green), Ticonderoga pencils, 10 glue sticks, children's scissors, 2× Crayola crayons 24pk, black skinny EXPO markers, chisel-tip coloured EXPO markers, 3 reams copy paper, white cardstock, multi-colour cardstock, Crayola broad markers, Crayola thin markers, erasable coloured pencils, index cards 3×5, construction paper 9×12.</p>
+  </div>
+</section>
+
+<section id="contacts">
+  <h2><span class="n">8</span> Contacts</h2>
+  <div class="card">
+    <table>
+      <tbody>
+        <tr><td>Pulaski main office</td><td class="num">(773) 534-4390</td></tr>
+        <tr><td>Apollo before/after care</td><td class="num">855-543-7277 · office [at] apolloafterschool.com</td></tr>
+        <tr><td>ChicagoSMA enrichment</td><td class="num">info [at] chicagosma.com</td></tr>
+        <tr><td>Aspen help — Ms. Colon, parent resource coordinator</td><td class="num">nnavacolon [at] cps.edu</td></tr>
+        <tr><td>Principal / Assistant Principal</td><td>Diana Racasi · Lisa Waltmire</td></tr>
+        <tr><td>Nurses</td><td>Room 015</td></tr>
+        <tr><td>RGC Coordinator</td><td>Ms. Barbosa, Room 214</td></tr>
+        <tr><td>Counselors</td><td>Ms. Echevarria (Rm 104) · Ms. Imperiale (by the PE office)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Last updated:</strong> <span id="upd">15 August 2026</span>. Built from three school emails, the kindergarten supply list, the staff organization chart, the ChicagoSMA and Apollo confirmations, and the official CPS 2026–27 Family Calendar.</p>
+  <p>Anything marked <em>verify</em> is either missing from those sources or contradicted between two of them — confirm with the school rather than trusting this page.</p>
+  <p>This page is public. Source emails, screenshots and the staff spreadsheet are deliberately not published here.</p>
+</footer>
+
+</div>
+
+<script>
+const TASKS = [
+  { group:"Call the school office", meta:"(773) 534-4390 — best done Monday or Tuesday. One call clears the biggest unknown plus three smaller ones.", items:[
+    { t:"Ask which door Will uses for morning drop-off and 3:45 dismissal", n:"He's in the Modular Building, Room 002B. Do not assume Door 1 — that's the Main Building side entrance used for 5 PM pickup.", pri:"now", done:false },
+    { t:"Ask whether the principal's opening-day logistics letter has gone out", n:"It's the official source for entry and exit doors. If it's coming Friday, the question above answers itself.", done:false },
+    { t:"Confirm Will's teacher and room", n:"Should be Colletti / 002B. The Aug 11 email warned K assignments could shift for class-size relief.", done:false },
+    { t:"Get Will's Student ID number", n:"Needed to pay the $150 fee. Also visible in Aspen.", done:false },
+  ]},
+  { group:"Email ChicagoSMA", meta:"info [at] chicagosma.com — they need lead time before Sep 1.", items:[
+    { t:"Ask which piano books a kindergartner needs", n:"Two conflicting lists, and Will's class name matches neither exactly. Either My First Piano Adventure Lesson Book A, or Piano Adventures Primer Level Lesson Book plus the Primer Theory Book.", pri:"now", done:false },
+    { t:"Ask whether the nut-free snack is every week or just camp week", n:"The email specifies it for camp week only; unclear whether it continues into Session 1.", done:false },
+    { t:"Confirm nothing else is needed for the art and dance classes", n:"The email says materials are provided for all art classes, so this should be a quick yes.", done:false },
+  ]},
+  { group:"Call Apollo", meta:"855-543-7277 — the account is under Will's dad's email, so notices go to him.", items:[
+    { t:"Ask whether we owe the ~$3,870 in remaining installments", n:"Nine unpaid $430 payments from Sep 14 to May 14, despite the receipt showing Balance $0.00. Confirm autopay and which card.", pri:"now", done:false },
+    { t:"Ask what time before-care starts and which door", n:"Before-care begins Aug 24 and the confirmation email says nothing about arrival.", done:false },
+    { t:"Ask what Will needs to bring", n:"The confirmation is purely a receipt — no packing list at all. Snack? Change of clothes?", done:false },
+    { t:"Confirm the 5 PM handoff from SMA to aftercare", n:"On class days he finishes enrichment at 5, not 3:45. Make sure Apollo expects him then.", done:false },
+  ]},
+  { group:"Shopping", meta:"Before Thursday's drop-off.", items:[
+    { t:"Work out whether the First Day Box Set was ever ordered", n:"About half the supply list is marked as included in that kit. If it wasn't ordered, everything needs buying.", pri:"now", done:false },
+    { t:"Buy inside shoes", n:"Required specifically for Ms. Colletti's room. No flip-flops. They stay at school.", done:false },
+    { t:"Buy a backpack that fits a large binder, lunch box and water bottle", done:false },
+    { t:"Buy the classroom contribution items", n:"Kleenex ×2, quart and gallon Ziplocs, paper towels ×2, baby wipes ×2, Clorox wipes ×2, hand wipes ×2, hand sanitizer, Band-Aids, Scotch thermal pouches (100 pack).", done:false },
+    { t:"Buy nut-free snacks", n:"Needed from day one for the 4 PM block.", done:false },
+    { t:"Buy movement-friendly clothes", n:"For Wednesdays and camp week.", done:false },
+    { t:"Order the piano book once SMA confirms which", n:"Needed by Tuesday Sep 1.", done:false },
+    { t:"Print and laminate the SMA backpack tags", n:"Use the purple MON–THURS tag — Will has a class all four days. M = Happy Hands, T = Piano, W = Jr. Hip Hop, TH = Young Rembrandts. Print in colour, laminate, cut, attach with a keyring.", done:false },
+  ]},
+  { group:"Admin", meta:"Mostly Monday jobs.", items:[
+    { t:"Log into Aspen and confirm the placement", n:"Assignments are live now. If locked out, email Ms. Colon — do it Monday, not Aug 23.", pri:"now", done:false },
+    { t:"Pay the $150 school fee", n:"Via the ePay link on the school website. No account needed, but you need Will's Student ID.", pri:"soon", done:false },
+    { t:"Reply to Ms. Colletti with Will's after-school schedule", n:"ChicagoSMA asks for this — it smooths the 3:45 handoff. Her welcome letter is due no later than Wed Aug 19.", done:false },
+    { t:"Ask Ms. Colletti for the A–F letter-day subject mapping", n:"Pulaski's 6-day rotation calendar is published but the letter-to-subject fields are blank — each homeroom fills its own. Without it you won't know which day is PE (gym shoes) or library (return books).", done:false },
+    { t:"Use the Aspen help Google Form rather than emailing cold", n:"There's a dedicated form for new accounts, resets and adding a sibling, linked in the Aug 11 email.", done:false },
+    { t:"Check the school site's supply-list page against the list we have", n:"Confirms the kindergarten list is the current version.", done:false },
+    { t:"Attend New Family Orientation and the supply drop-off", n:"Thursday Aug 20 — orientation 1:30, drop-off and meet-and-greet 2:00–3:45. Best chance to ask about the door in person.", pri:"soon", done:false },
+  ]},
+];
+
+const QA = [
+  { q:"Do we pack lunch, or is it provided?", s:"answered",
+    a:"<strong>Provided, free.</strong> CPS offers free breakfast, lunch and snacks to all students — no application, no eligibility form. Note lunch is early though: the first block eats at 10:30 AM." },
+  { q:"What is the CPS schedule?", s:"answered",
+    a:"<strong>Got it</strong> — see the Days off section. Two things stood out: Friday Sep 25 is a day off, and school <em>is</em> in session Nov 23–25 even though SMA runs no classes that week." },
+  { q:"Do we bring Will to the New Family Breakfast?", s:"answered",
+    a:"<strong>No — it's for parents.</strong> “BooHoo/Yahoo” is the traditional new-parent gathering, and the invitation says “right after drop-off,” so Will is in class. One wrinkle: it's in the <em>Main</em> building courtyard while his room is in the <em>Modular</em> building." },
+  { q:"Which door for drop-off and pickup?", s:"open",
+    a:"Still unknown, and it's the biggest gap. The principal's opening-day logistics letter is the official source and hasn't arrived. Ask the office." },
+  { q:"Do we owe more for Apollo?", s:"open",
+    a:"Almost certainly — around $3,870 across nine monthly installments, despite the receipt showing a zero balance. Needs a phone call." },
+  { q:"Which piano books?", s:"open",
+    a:"Two conflicting lists in the same email, neither matching Will's class name exactly. Needs SMA to confirm, and the books are needed by Sep 1." },
+  { q:"What extra supplies does SMA need?", s:"answered",
+    a:"<strong>Short list.</strong> Both art classes provide materials and pianos are provided in class. So: the piano book, movement clothes for Wednesdays, nut-free snacks, a keyboard at home for practice, and the printed tags. Nothing else." },
+  { q:"Anything to pack specially for Apollo?", s:"open",
+    a:"Unknown — the Apollo confirmation is purely a receipt with no packing list. Worth asking on the same call as the billing question." },
+];
+
+const PACK = [
+  { t:"Backpack", n:"Must fit a large binder, lunch box and water bottle.", done:false },
+  { t:"Inside shoes", n:"Required for Ms. Colletti's room, no flip-flops. These stay at school.", done:false },
+  { t:"Spill-proof water bottle", done:false },
+  { t:"Nut-free snack", n:"For the 4 PM camp. Required all four days this week.", done:false },
+  { t:"Supplies, if not dropped off on Aug 20", done:false },
+];
+
+const BUY = [
+  { t:"Backpack (large binder + lunch box + water bottle)", done:false },
+  { t:"Inside shoes — no flip-flops", n:"Required for Colletti's room specifically.", done:false },
+  { t:"2 boxes Kleenex", done:false },
+  { t:"Quart-size and gallon-size Ziploc bags", done:false },
+  { t:"2 rolls paper towels", done:false },
+  { t:"2 containers baby wipes", done:false },
+  { t:"2 containers Clorox wipes", done:false },
+  { t:"2 antibacterial hand wipes", done:false },
+  { t:"1 bottle hand sanitizer", done:false },
+  { t:"1 box Band-Aids, assorted", done:false },
+  { t:"Scotch thermal pouches 8½×11, pack of 100", n:"Thermal only, per the list.", done:false },
+  { t:"Keyring for the backpack tag", done:false },
+  { t:"Optional: strong magnets", n:"Requested by all four K classrooms.", done:false },
+];
+
+function li(o){
+  const el=document.createElement('li');
+  if(o.done) el.className='done';
+  const pri = o.pri && !o.done ? ` <span class="tag ${o.pri}">${o.pri==='now'?'this week':'soon'}</span>` : '';
+  el.innerHTML = `<span class="box">${o.done?'&#10003;':''}</span>`
+    + `<span class="txt">${o.t}${pri}${o.n?`<span class="note">${o.n}</span>`:''}</span>`;
+  return el;
+}
+
+const groupsEl=document.getElementById('groups');
+let total=0, done=0;
+TASKS.forEach(g=>{
+  const card=document.createElement('div'); card.className='card';
+  const ul=document.createElement('ul'); ul.className='tasks';
+  g.items.forEach(it=>{ total++; if(it.done) done++; ul.appendChild(li(it)); });
+  card.innerHTML=`<h3>${g.group} <span class="pill">${g.items.filter(i=>i.done).length}/${g.items.length}</span></h3>`
+    + (g.meta?`<p class="meta">${g.meta}</p>`:'');
+  card.appendChild(ul);
+  groupsEl.appendChild(card);
+});
+
+document.getElementById('cnt').textContent = `${done} of ${total} done`;
+document.getElementById('barfill').style.width = total? (done/total*100).toFixed(1)+'%' : '0%';
+
+const qaEl=document.getElementById('qa');
+QA.forEach(x=>{
+  const d=document.createElement('div'); d.className='qa';
+  d.innerHTML=`<p class="q">${x.q} <span class="tag ${x.s==='answered'?'done':'open'}">${x.s}</span></p><p class="a">${x.a}</p>`;
+  qaEl.appendChild(d);
+});
+
+PACK.forEach(o=>document.getElementById('packlist').appendChild(li(o)));
+BUY.forEach(o=>document.getElementById('buylist').appendChild(li(o)));
+
+(function(){
+  const first=new Date(2026,7,24);
+  const now=new Date();
+  const d=Math.ceil((first-new Date(now.getFullYear(),now.getMonth(),now.getDate()))/86400000);
+  const el=document.getElementById('cd');
+  if(d>1) el.innerHTML=`<b>${d}</b> days until the first day`;
+  else if(d===1) el.innerHTML=`<b>Tomorrow</b> is the first day`;
+  else if(d===0) el.innerHTML=`<b>Today</b> is the first day`;
+  else el.innerHTML=`Day <b>${Math.abs(d)+1}</b> of kindergarten`;
+})();
+</script>
+</body>
+</html>
