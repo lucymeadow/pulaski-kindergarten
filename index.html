@@ -178,13 +178,14 @@ a{color:var(--accent)}
   <div class="card">
     <h3>How Monday runs</h3>
     <table>
-      <tr><td class="num">before 8:45</td><td>Apollo before-care — starts today, 5 days a week</td></tr>
+      <tr><td class="num">7:30–8:45 AM</td><td>Apollo before-care — starts today, Monday to Friday</td></tr>
       <tr><td class="num">8:45 AM</td><td><strong>School begins</strong> — Room 002B, Modular Building</td></tr>
       <tr><td class="num">~9:00 AM</td><td>FOP BooHoo/Yahoo Breakfast, main building courtyard. <em>Parents only</em> — Will is in class. Drop him at the modular first, then walk over.</td></tr>
       <tr><td class="num">10:00–10:30</td><td>Recess, then lunch. Lunch is free and provided by CPS.</td></tr>
       <tr><td class="num">3:45 PM</td><td>School ends. SMA coordinators collect Modular Building kids <strong>from the classroom</strong> — Will doesn't cross to the main cafeteria alone.</td></tr>
       <tr><td class="num">4:00–5:00 PM</td><td>Hip Hop Dance Camp (Aug 24–27, already paid)</td></tr>
-      <tr><td class="num">5:00 PM</td><td>Pickup at Main Building <strong>Door 1 on McLean</strong> — or escorted back to Apollo aftercare</td></tr>
+      <tr><td class="num">5:00 PM</td><td>SMA escorts him back to Apollo aftercare — or you collect him at Main Building <strong>Door 1 on McLean</strong></td></tr>
+      <tr><td class="num">until 6:00 PM</td><td>Apollo aftercare. 6:00 is the hard stop.</td></tr>
     </table>
   </div>
 
@@ -207,10 +208,37 @@ a{color:var(--accent)}
         <tr><td>Tuesday</td><td>Piano</td><td>Book — pending SMA's answer</td><td class="num">12</td></tr>
         <tr><td>Wednesday</td><td>Jr. Hip Hop</td><td>Movement clothes</td><td class="num">12</td></tr>
         <tr><td>Thursday</td><td>Young Rembrandts (drawing)</td><td>Nothing — materials provided</td><td class="num">13</td></tr>
-        <tr><td>Friday</td><td>—</td><td>Apollo aftercare only</td><td class="num">—</td></tr>
+        <tr><td>Friday</td><td>— none</td><td>Straight to Apollo at 3:45</td><td class="num">—</td></tr>
       </tbody>
     </table>
     <p class="meta" style="margin:14px 0 0">Pianos are provided for in-class use, so there's no instrument to carry — but the K–6th checklist expects a piano or keyboard at home for practice between lessons.</p>
+  </div>
+
+  <div class="card">
+    <h3>The handoff chain</h3>
+    <p class="meta">Three separate organizations touch Will between 3:45 and 6:00. Each needs to know the same schedule, and none of them learns it from the others.</p>
+    <table>
+      <thead><tr><th></th><th>Mon–Thu</th><th>Friday</th></tr></thead>
+      <tbody>
+        <tr><td><strong>7:30–8:45</strong></td><td colspan="2">Apollo before-care</td></tr>
+        <tr><td><strong>8:45–3:45</strong></td><td colspan="2">School — Ms. Colletti, Room 002B</td></tr>
+        <tr><td><strong>3:45</strong></td><td>SMA coordinators collect him from Room 002B, snack in the main cafeteria</td><td>⚠️ Who collects him? Undocumented</td></tr>
+        <tr><td><strong>4:00–5:00</strong></td><td>SMA class</td><td>Apollo aftercare</td></tr>
+        <tr><td><strong>5:00</strong></td><td>SMA escorts him to Apollo aftercare</td><td>—</td></tr>
+        <tr><td><strong>until 6:00</strong></td><td colspan="2">Apollo aftercare</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout stop">
+    <p><span class="h">The Friday gap</span>
+    Monday to Thursday is documented: ChicagoSMA states its coordinators collect Modular Building students <em>from their classroom</em>, and that Apollo kids are escorted back to aftercare afterwards. So the 3:45 and 5:00 handoffs both have an owner.</p>
+    <p><strong>Friday has no SMA class</strong> — so someone has to bring Will from Room&nbsp;002B to Apollo at 3:45, and nothing in the Apollo confirmation says who, or whether they collect from modular classrooms at all. Ask Apollo directly. This is a five-year-old in a separate building from the main one, so "we'll figure it out on the day" isn't good enough.</p>
+  </div>
+
+  <div class="callout">
+    <p><span class="h">Tell all three, in writing</span>
+    Each organization sees only its own slice. Ms. Colletti needs to know he leaves with SMA on Mon–Thu and Apollo on Fri. SMA needs to know he's an Apollo child so they escort rather than release him at 5:00. Apollo needs to know he arrives at 5:00 on class days but 3:45 on Fridays. Send the same short schedule to all three so there's a written record if anyone's confused on the day.</p>
   </div>
 
   <div class="callout">
@@ -312,7 +340,7 @@ a{color:var(--accent)}
 </section>
 
 <footer>
-  <p><strong>Last updated:</strong> <span id="upd">15 August 2026</span>. Built from three school emails, the kindergarten supply list, the staff organization chart, the ChicagoSMA and Apollo confirmations, and the official CPS 2026–27 Family Calendar.</p>
+  <p><strong>Last updated:</strong> <span id="upd">15 August 2026</span> — added the handoff chain and confirmed Apollo hours. Built from three school emails, the kindergarten supply list, the staff organization chart, Pulaski's 6-day rotation calendar, the ChicagoSMA and Apollo confirmations, and the official CPS 2026–27 Family Calendar.</p>
   <p>Anything marked <em>verify</em> is either missing from those sources or contradicted between two of them — confirm with the school rather than trusting this page.</p>
   <p>This page is public. Source emails, screenshots and the staff spreadsheet are deliberately not published here.</p>
 </footer>
@@ -332,11 +360,18 @@ const TASKS = [
     { t:"Ask whether the nut-free snack is every week or just camp week", n:"The email specifies it for camp week only; unclear whether it continues into Session 1.", done:false },
     { t:"Confirm nothing else is needed for the art and dance classes", n:"The email says materials are provided for all art classes, so this should be a quick yes.", done:false },
   ]},
-  { group:"Call Apollo", meta:"855-543-7277 — the account is under Will's dad's email, so notices go to him.", items:[
+  { group:"Call Apollo", meta:"855-543-7277 — the account is under Will's dad's email, so notices go to him. Hours are confirmed: 7:30–8:45 AM and 3:45–6:00 PM, Monday to Friday.", items:[
     { t:"Ask whether we owe the ~$3,870 in remaining installments", n:"Nine unpaid $430 payments from Sep 14 to May 14, despite the receipt showing Balance $0.00. Confirm autopay and which card.", pri:"now", done:false },
-    { t:"Ask what time before-care starts and which door", n:"Before-care begins Aug 24 and the confirmation email says nothing about arrival.", done:false },
+    { t:"Ask who collects Will from Room 002B at 3:45 on Fridays", n:"No SMA class on Fridays, so the modular-classroom-to-Apollo handoff falls to Apollo — and nothing documents whether they do it. The one genuine gap in the week.", pri:"now", done:false },
+    { t:"Confirm Apollo expects him at 5:00 on Mon–Thu, 3:45 on Fri", n:"Different arrival time depending on the day. Worth stating explicitly so nobody marks him missing.", pri:"now", done:false },
+    { t:"Ask which door for 7:30 AM before-care drop-off", n:"Hours are known now, but not the entrance — and he's in the modular building, not the main one.", done:false },
     { t:"Ask what Will needs to bring", n:"The confirmation is purely a receipt — no packing list at all. Snack? Change of clothes?", done:false },
-    { t:"Confirm the 5 PM handoff from SMA to aftercare", n:"On class days he finishes enrichment at 5, not 3:45. Make sure Apollo expects him then.", done:false },
+    { t:"Ask about the late-pickup policy after 6:00 PM", n:"6:00 is the hard stop. Worth knowing the fee and the grace period before you need it.", done:false },
+  ]},
+  { group:"Tell all three about the schedule", meta:"The handoff chain nobody else can see end-to-end. Same short schedule to each, in writing.", items:[
+    { t:"Ms. Colletti — he leaves with SMA Mon–Thu, Apollo Fri", n:"ChicagoSMA explicitly asks you to send the teacher his after-school schedule so the 3:45 handoff is smooth.", pri:"now", done:false },
+    { t:"ChicagoSMA — he is an Apollo child, escort at 5:00", n:"Their policy is to escort Apollo kids back to aftercare rather than release them, but only if they know he's one.", pri:"now", done:false },
+    { t:"Apollo — arrives 5:00 Mon–Thu, 3:45 Fri", n:"Covered by the confirmation calls above, but send it in writing too so there's a record.", pri:"now", done:false },
   ]},
   { group:"Shopping", meta:"Before Thursday's drop-off.", items:[
     { t:"Work out whether the First Day Box Set was ever ordered", n:"About half the supply list is marked as included in that kit. If it wasn't ordered, everything needs buying.", pri:"now", done:false },
@@ -376,6 +411,10 @@ const QA = [
     a:"<strong>Short list.</strong> Both art classes provide materials and pianos are provided in class. So: the piano book, movement clothes for Wednesdays, nut-free snacks, a keyboard at home for practice, and the printed tags. Nothing else." },
   { q:"Anything to pack specially for Apollo?", s:"open",
     a:"Unknown — the Apollo confirmation is purely a receipt with no packing list. Worth asking on the same call as the billing question." },
+  { q:"What are the Apollo hours?", s:"answered",
+    a:"<strong>7:30–8:45 AM and 3:45–6:00 PM, Monday to Friday.</strong> On SMA days he's in class 4:00–5:00, then escorted back to aftercare until 6:00. The entrance for the 7:30 drop-off is still unconfirmed." },
+  { q:"Who moves Will between school, SMA and Apollo?", s:"open",
+    a:"<strong>Mon–Thu is covered</strong> — SMA collects from Room 002B at 3:45 and escorts Apollo children back at 5:00. <strong>Friday is the gap:</strong> no SMA class, so somebody has to bring him from the modular building to Apollo at 3:45 and nothing says who. Ask Apollo." },
 ];
 
 const PACK = [
