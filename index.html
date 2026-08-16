@@ -262,17 +262,17 @@ a{color:var(--accent)}
         <tr><td>ChicagoSMA Session 1 — 4 classes</td><td class="num">$1,463.08</td><td><span class="tag done">paid</span></td></tr>
         <tr><td>Hip Hop Camp, Aug 24–27</td><td class="num">$336.82</td><td><span class="tag done">paid</span></td></tr>
         <tr><td>Apollo — first payment</td><td class="num">$466.00</td><td><span class="tag done">paid</span></td></tr>
-        <tr><td>Apollo — remaining installments</td><td class="num">~$3,870</td><td><span class="tag soon">verify</span></td></tr>
+        <tr><td>Apollo — remaining installments</td><td class="num">~$430 × 9</td><td><span class="tag done">autopay</span></td></tr>
         <tr><td>Pulaski school fee</td><td class="num">$150.00</td><td><span class="tag now">due Sep 15</span></td></tr>
         <tr><td>Supplies + piano book</td><td class="num">varies</td><td><span class="tag now">to buy</span></td></tr>
       </tbody>
     </table>
   </div>
 
-  <div class="callout stop">
-    <p><span class="h">The Apollo receipt contradicts itself</span>
-    It says <em>Total $466 / Paid $466 / Balance $0.00</em> — which reads like the year is settled. But the table directly below lists <strong>nine unpaid installments of $430</strong>, on the 14th of each month from September through May. Likely reading: the $466 covered month one ($429) plus a $35 annual registration fee and a $2 card fee, and roughly <strong>$3,870 is still to come</strong>.</p>
-    <p>Worth a call to confirm whether autopay is active and on which card. The account is registered under Will's dad's email, so the billing notices go to him.</p>
+  <div class="callout">
+    <p><span class="h">Apollo billing — resolved</span>
+    The receipt's <em>Balance $0.00</em> was describing only the amount due that day, not the year. The $466 covered month one ($429) plus a $35 annual registration fee and a $2 card fee. Roughly <strong>$430 comes out monthly on the 14th, September through May</strong> — about $3,870 more — charged automatically to the card on file. Nothing to action.</p>
+    <p>The account sits under Will's dad's email, so the receipts go to him. Worth him keeping an eye on the September 14 charge landing as expected, since that's the first one after the initial payment.</p>
   </div>
 
   <div class="callout">
@@ -309,15 +309,19 @@ a{color:var(--accent)}
 
 <section id="supplies">
   <h2><span class="n">7</span> Supplies</h2>
-  <p class="lede">About half the school list is marked as included in the “First Day Box Set” — a pre-packaged kit ordered separately. If that was never ordered, everything below needs buying.</p>
+  <p class="lede">School supplies are bought. Four things left to get, and two to dig out at home.</p>
   <div class="card">
-    <h3>Buy regardless</h3>
-    <p class="meta">Not part of the kit.</p>
+    <h3>Still to get <span class="pill" id="buycount"></span></h3>
     <ul class="tasks" id="buylist"></ul>
   </div>
   <div class="card">
-    <h3>In the kit — skip if it was ordered</h3>
-    <p class="meta">Folders (2 red + 2 green), Ticonderoga pencils, 10 glue sticks, children's scissors, 2× Crayola crayons 24pk, black skinny EXPO markers, chisel-tip coloured EXPO markers, 3 reams copy paper, white cardstock, multi-colour cardstock, Crayola broad markers, Crayola thin markers, erasable coloured pencils, index cards 3×5, construction paper 9×12.</p>
+    <h3>Bringing from home</h3>
+    <p class="meta">Not a purchase — just needs gathering before Thursday's drop-off.</p>
+    <ul class="tasks" id="homelist"></ul>
+  </div>
+  <div class="card">
+    <h3>Already bought ✓</h3>
+    <p class="meta">Kleenex ×2, quart and gallon Ziploc bags, Clorox wipes ×2, antibacterial hand wipes ×2, hand sanitizer, Band-Aids, Scotch thermal pouches (100 pack) — plus the full First Day Box Set list: folders (2 red + 2 green), Ticonderoga pencils, 10 glue sticks, children's scissors, 2× Crayola crayons 24pk, black skinny EXPO markers, chisel-tip coloured EXPO markers, 3 reams copy paper, white cardstock, multi-colour cardstock, Crayola broad markers, Crayola thin markers, erasable coloured pencils, index cards 3×5, construction paper 9×12.</p>
   </div>
 </section>
 
@@ -340,7 +344,7 @@ a{color:var(--accent)}
 </section>
 
 <footer>
-  <p><strong>Last updated:</strong> <span id="upd">15 August 2026</span> — added the handoff chain and confirmed Apollo hours. Built from three school emails, the kindergarten supply list, the staff organization chart, Pulaski's 6-day rotation calendar, the ChicagoSMA and Apollo confirmations, and the official CPS 2026–27 Family Calendar.</p>
+  <p><strong>Last updated:</strong> <span id="upd">15 August 2026</span> — school supplies bought, Apollo billing confirmed as autopay. Built from three school emails, the kindergarten supply list, the staff organization chart, Pulaski's 6-day rotation calendar, the ChicagoSMA and Apollo confirmations, and the official CPS 2026–27 Family Calendar.</p>
   <p>Anything marked <em>verify</em> is either missing from those sources or contradicted between two of them — confirm with the school rather than trusting this page.</p>
   <p>This page is public. Source emails, screenshots and the staff spreadsheet are deliberately not published here.</p>
 </footer>
@@ -361,7 +365,6 @@ const TASKS = [
     { t:"Confirm nothing else is needed for the art and dance classes", n:"The email says materials are provided for all art classes, so this should be a quick yes.", done:false },
   ]},
   { group:"Call Apollo", meta:"855-543-7277 — the account is under Will's dad's email, so notices go to him. Hours are confirmed: 7:30–8:45 AM and 3:45–6:00 PM, Monday to Friday.", items:[
-    { t:"Ask whether we owe the ~$3,870 in remaining installments", n:"Nine unpaid $430 payments from Sep 14 to May 14, despite the receipt showing Balance $0.00. Confirm autopay and which card.", pri:"now", done:false },
     { t:"Ask who collects Will from Room 002B at 3:45 on Fridays", n:"No SMA class on Fridays, so the modular-classroom-to-Apollo handoff falls to Apollo — and nothing documents whether they do it. The one genuine gap in the week.", pri:"now", done:false },
     { t:"Confirm Apollo expects him at 5:00 on Mon–Thu, 3:45 on Fri", n:"Different arrival time depending on the day. Worth stating explicitly so nobody marks him missing.", pri:"now", done:false },
     { t:"Ask which door for 7:30 AM before-care drop-off", n:"Hours are known now, but not the entrance — and he's in the modular building, not the main one.", done:false },
@@ -373,13 +376,14 @@ const TASKS = [
     { t:"ChicagoSMA — he is an Apollo child, escort at 5:00", n:"Their policy is to escort Apollo kids back to aftercare rather than release them, but only if they know he's one.", pri:"now", done:false },
     { t:"Apollo — arrives 5:00 Mon–Thu, 3:45 Fri", n:"Covered by the confirmation calls above, but send it in writing too so there's a record.", pri:"now", done:false },
   ]},
-  { group:"Shopping", meta:"Before Thursday's drop-off.", items:[
-    { t:"Work out whether the First Day Box Set was ever ordered", n:"About half the supply list is marked as included in that kit. If it wasn't ordered, everything needs buying.", pri:"now", done:false },
-    { t:"Buy inside shoes", n:"Required specifically for Ms. Colletti's room. No flip-flops. They stay at school.", done:false },
-    { t:"Buy a backpack that fits a large binder, lunch box and water bottle", done:false },
-    { t:"Buy the classroom contribution items", n:"Kleenex ×2, quart and gallon Ziplocs, paper towels ×2, baby wipes ×2, Clorox wipes ×2, hand wipes ×2, hand sanitizer, Band-Aids, Scotch thermal pouches (100 pack).", done:false },
+  { group:"Shopping", meta:"School supplies are bought. Four items left, plus two to find at home.", items:[
+    { t:"Buy the classroom contribution items", n:"Kleenex, Ziplocs, Clorox wipes, hand wipes, hand sanitizer, Band-Aids, thermal pouches — all done.", done:true },
+    { t:"Buy a lunch box", n:"Needs to fit the backpack alongside a large binder and water bottle.", pri:"now", done:false },
+    { t:"Buy inside shoes", n:"Required specifically for Ms. Colletti's room. No flip-flops. They stay at school.", pri:"now", done:false },
+    { t:"Buy a keyring for the backpack tag", done:false },
+    { t:"Gather 2 rolls paper towels and 2 containers baby wipes from home", done:false },
     { t:"Buy nut-free snacks", n:"Needed from day one for the 4 PM block.", done:false },
-    { t:"Buy movement-friendly clothes", n:"For Wednesdays and camp week.", done:false },
+    { t:"Optional: strong magnets", n:"Requested by all four K classrooms.", done:false },
     { t:"Order the piano book once SMA confirms which", n:"Needed by Tuesday Sep 1.", done:false },
     { t:"Print and laminate the SMA backpack tags", n:"Use the purple MON–THURS tag — Will has a class all four days. M = Happy Hands, T = Piano, W = Jr. Hip Hop, TH = Young Rembrandts. Print in colour, laminate, cut, attach with a keyring.", done:false },
   ]},
@@ -403,8 +407,8 @@ const QA = [
     a:"<strong>No — it's for parents.</strong> “BooHoo/Yahoo” is the traditional new-parent gathering, and the invitation says “right after drop-off,” so Will is in class. One wrinkle: it's in the <em>Main</em> building courtyard while his room is in the <em>Modular</em> building." },
   { q:"Which door for drop-off and pickup?", s:"open",
     a:"Still unknown, and it's the biggest gap. The principal's opening-day logistics letter is the official source and hasn't arrived. Ask the office." },
-  { q:"Do we owe more for Apollo?", s:"open",
-    a:"Almost certainly — around $3,870 across nine monthly installments, despite the receipt showing a zero balance. Needs a phone call." },
+  { q:"Do we owe more for Apollo?", s:"answered",
+    a:"<strong>Yes — around $3,870 more, but it's handled.</strong> Roughly $430 comes out monthly from the credit card on file in the account, on the 14th, September through May. Nothing to action; the receipt's “Balance $0.00” was just describing the amount due that day, not the year." },
   { q:"Which piano books?", s:"open",
     a:"Two conflicting lists in the same email, neither matching Will's class name exactly. Needs SMA to confirm, and the books are needed by Sep 1." },
   { q:"What extra supplies does SMA need?", s:"answered",
@@ -422,23 +426,20 @@ const PACK = [
   { t:"Inside shoes", n:"Required for Ms. Colletti's room, no flip-flops. These stay at school.", done:false },
   { t:"Spill-proof water bottle", done:false },
   { t:"Nut-free snack", n:"For the 4 PM camp. Required all four days this week.", done:false },
+  { t:"Lunch box", n:"Lunch itself is free and provided, but the list specifies a backpack that fits one — handy for snacks and for days you'd rather pack.", done:false },
   { t:"Supplies, if not dropped off on Aug 20", done:false },
 ];
 
 const BUY = [
-  { t:"Backpack (large binder + lunch box + water bottle)", done:false },
-  { t:"Inside shoes — no flip-flops", n:"Required for Colletti's room specifically.", done:false },
-  { t:"2 boxes Kleenex", done:false },
-  { t:"Quart-size and gallon-size Ziploc bags", done:false },
-  { t:"2 rolls paper towels", done:false },
-  { t:"2 containers baby wipes", done:false },
-  { t:"2 containers Clorox wipes", done:false },
-  { t:"2 antibacterial hand wipes", done:false },
-  { t:"1 bottle hand sanitizer", done:false },
-  { t:"1 box Band-Aids, assorted", done:false },
-  { t:"Scotch thermal pouches 8½×11, pack of 100", n:"Thermal only, per the list.", done:false },
+  { t:"Lunch box", n:"Needs to fit the backpack alongside a large binder and water bottle.", pri:"now", done:false },
+  { t:"Inside shoes — no flip-flops", n:"Required for Ms. Colletti's room specifically. They stay at school.", pri:"now", done:false },
   { t:"Keyring for the backpack tag", done:false },
   { t:"Optional: strong magnets", n:"Requested by all four K classrooms.", done:false },
+];
+
+const HOME = [
+  { t:"2 rolls paper towels", done:false },
+  { t:"2 containers baby wipes", done:false },
 ];
 
 function li(o){
@@ -474,6 +475,9 @@ QA.forEach(x=>{
 
 PACK.forEach(o=>document.getElementById('packlist').appendChild(li(o)));
 BUY.forEach(o=>document.getElementById('buylist').appendChild(li(o)));
+HOME.forEach(o=>document.getElementById('homelist').appendChild(li(o)));
+document.getElementById('buycount').textContent =
+  `${BUY.filter(i=>i.done).length}/${BUY.length}`;
 
 (function(){
   const first=new Date(2026,7,24);
