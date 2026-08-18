@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Supply Checklist — Will's Kindergarten 2026–27</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Supply Checklist</h1>
+  <p class="sub">Kindergarten 2026–27 &middot; Ms. Colletti, Room 002B &middot; drop off Thu Aug 20, 2:00–3:45 PM</p>
+</header>
+
+<nav><ul>
+  <li><a href="index.html">To-dos</a></li>
+  <li><a href="calendar.html">Full calendar</a></li>
+  <li><a href="meet-and-greet.html">Thursday sheet</a></li>
+  <li><a href="#list" class="here">Checklist</a></li>
+</ul></nav>
+
+<div class="progress">
+  <div class="row"><span class="lab">Packed and ready</span><span class="cnt" id="cnt">—</span></div>
+  <div class="bar"><span id="barfill" style="width:0%"></span></div>
+  <div class="tools">
+    <button class="btn" id="reset">Reset all</button>
+    <button class="btn" id="allon">Check everything</button>
+    <span class="saved" id="saved">Ticks save automatically in this browser.</span>
+  </div>
+</div>
+
+<div class="callout">
+  <p><span class="h">Tap anywhere on a row to tick it</span>
+  Your ticks are saved in this browser, so they'll still be here when you come back on the same device. They won't sync to Will's dad's phone — if he's doing a shop, easiest is to send him a screenshot.</p>
+</div>
+
+<section id="list">
+
+  <h2><span class="n">1</span> Must have</h2>
+  <div class="card">
+    <ul class="check" data-group="must"></ul>
+  </div>
+
+  <h2><span class="n">2</span> Classroom contributions</h2>
+  <p class="lede">Not part of the First Day Box Set — these needed buying separately.</p>
+  <div class="card">
+    <ul class="check" data-group="contrib"></ul>
+  </div>
+
+  <h2><span class="n">3</span> Bringing from home</h2>
+  <p class="lede">Not a purchase, just needs gathering before Thursday.</p>
+  <div class="card">
+    <ul class="check" data-group="home"></ul>
+  </div>
+
+  <h2><span class="n">4</span> First Day Box Set items</h2>
+  <p class="lede">The supply list marks these as included in the pre-packaged kit from 1stdayschoolsupplies.com.</p>
+  <div class="card">
+    <ul class="check" data-group="box"></ul>
+  </div>
+
+  <h2><span class="n">5</span> Optional</h2>
+  <div class="card">
+    <ul class="check" data-group="opt"></ul>
+  </div>
+
+  <h2><span class="n">6</span> The school fee</h2>
+  <div class="card">
+    <ul class="check" data-group="fee"></ul>
+    <p class="meta" style="margin:14px 0 0">The supply list says <strong>September 15</strong>; Principal Racasi's letter says September 30. Paying by the 15th satisfies both. Pay via the <a href="https://magic.collectorsolutions.com/magic-ui/Login/cps-31211-pulaski-international">ePay portal</a> — no login needed, but you need Will's Student ID.</p>
+  </div>
+
+</section>
+
+<footer>
+  <p><a href="index.html">&larr; To-dos</a> &middot; <a href="calendar.html">Full calendar</a> &middot; <a href="meet-and-greet.html">Thursday sheet</a></p>
+  <p>Transcribed from the school's <em>Kindergarten Supply List 2026-2027</em>. Ticks reflect what was bought as of 17 August — adjust as you go.</p>
+</footer>
+
+</div>
+
+<script>
+const ITEMS = [
+  // group, id, text, note, default-ticked
+  ['must','backpack','Backpack','Large enough for a large binder, lunch box and water bottle. The list’s own tip: pick one with a connected lunch box and a spill-proof water bottle.',true],
+  ['must','lunchbox','Lunch box','Lunch itself is free and provided by CPS — but useful for snacks and for days you’d rather pack.',false],
+  ['must','bottle','Spill-proof water bottle','',true],
+  ['must','shoes','Inside shoes to keep at school','No flip-flops. Required specifically for Ms. Colletti’s room — the list names Shah, Mangelsdorf and Colletti.',false],
+
+  ['contrib','kleenex','2 boxes Kleenex','',true],
+  ['contrib','ziplocq','1 box quart-size Ziploc bags','',true],
+  ['contrib','ziplocg','1 box gallon-size Ziploc bags','',true],
+  ['contrib','clorox','2 containers Clorox wipes','',true],
+  ['contrib','handwipes','2 antibacterial hand wipes','',true],
+  ['contrib','sanitizer','1 bottle hand sanitizer','',true],
+  ['contrib','bandaids','1 box Band-Aids, assorted sizes','',true],
+  ['contrib','pouches','Scotch Thermal Pouches 8½ × 11 — pack of 100','THERMAL ONLY, per the list.',true],
+
+  ['home','towels','2 rolls paper towels','',false],
+  ['home','babywipes','2 containers baby wipes','',false],
+
+  ['box','folders','4 heavy-duty 2-pocket plastic folders','2 red, 2 green.',true],
+  ['box','pencils','1 box pre-sharpened Ticonderoga pencils','',true],
+  ['box','glue','10 small glue sticks, 7 g','',true],
+  ['box','scissors','1 pair children’s scissors','',true],
+  ['box','crayons','2 boxes Crayola crayons, 24-pack regular size','',true],
+  ['box','expoblack','1 box skinny black dry-erase EXPO markers','',true],
+  ['box','expocolor','1 box chisel-tip multi-coloured dry-erase EXPO markers','',true],
+  ['box','copypaper','3 reams white copy paper','500 count each.',true],
+  ['box','cardwhite','1 ream white cardstock','',true],
+  ['box','cardcolor','1 ream multi-colour cardstock','',true],
+  ['box','broad','1 box Crayola broad markers','',true],
+  ['box','thin','1 box Crayola thin markers','',true],
+  ['box','pencilscol','1 box erasable coloured pencils','',true],
+  ['box','index','1 pack index cards','3 × 5, plain, white, 100 count.',true],
+  ['box','construction','Construction paper','9 × 12, assorted colours, 50 count.',true],
+
+  ['opt','magnets','Strong magnets','Requested by all four kindergarten classrooms.',false],
+
+  ['fee','fee150','Pay the $150 student fee via ePay','Due by Sept 15 to satisfy both stated deadlines. Needs Will’s Student ID.',false],
+];
+
+// not applicable to Ms. Colletti's room, shown for completeness
+const NA = [['opt','Clear sheet protectors','Only requested by Ms. Pema and Ms. Shah — not Ms. Colletti’s room.']];
+
+const KEY='pk-supplies-v1';
+let state={};
+try{ state=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ state={}; }
+
+function isOn(id, dflt){ return Object.prototype.hasOwnProperty.call(state,id) ? !!state[id] : dflt; }
+
+ITEMS.forEach(([g,id,text,note,dflt])=>{
+  const ul=document.querySelector(`ul.check[data-group="${g}"]`);
+  if(!ul) return;
+  const li=document.createElement('li');
+  const on=isOn(id,dflt);
+  li.innerHTML='<label><input type="checkbox" data-id="'+id+'" data-default="'+dflt+'"'
+    +(on?' checked':'')+'><span class="t"><span class="main">'+text+'</span>'
+    +(note?'<small>'+note+'</small>':'')+'</span></label>';
+  ul.appendChild(li);
+});
+
+NA.forEach(([g,text,note])=>{
+  const ul=document.querySelector(`ul.check[data-group="${g}"]`);
+  if(!ul) return;
+  const li=document.createElement('li');
+  li.className='na';
+  li.innerHTML='<label><input type="checkbox" disabled><span class="t"><span class="main">'
+    +text+'</span><small>'+note+'</small></span></label>';
+  ul.appendChild(li);
+});
+
+const boxes=[...document.querySelectorAll('ul.check input:not([disabled])')];
+
+function save(){
+  const out={};
+  boxes.forEach(b=>{ out[b.dataset.id]=b.checked; });
+  state=out;
+  try{ localStorage.setItem(KEY, JSON.stringify(out)); }catch(e){}
+}
+
+function tally(){
+  const done=boxes.filter(b=>b.checked).length;
+  const total=boxes.length;
+  document.getElementById('cnt').textContent=done+' of '+total+' done';
+  document.getElementById('barfill').style.width=(total?done/total*100:0).toFixed(1)+'%';
+  const left=total-done;
+  document.getElementById('saved').textContent = left
+    ? left+' still to go · ticks save automatically in this browser'
+    : 'All done · ticks save automatically in this browser';
+}
+
+boxes.forEach(b=>b.addEventListener('change',()=>{ save(); tally(); }));
+
+document.getElementById('reset').addEventListener('click',()=>{
+  if(!confirm('Clear every tick and go back to the original list?')) return;
+  boxes.forEach(b=>{ b.checked=false; });
+  save(); tally();
+});
+document.getElementById('allon').addEventListener('click',()=>{
+  boxes.forEach(b=>{ b.checked=true; });
+  save(); tally();
+});
+
+tally();
+</script>
+</body>
+</html>
