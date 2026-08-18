@@ -23,7 +23,7 @@
 </ul></nav>
 
 <div class="progress">
-  <div class="row"><span class="lab">Packed and ready</span><span class="cnt" id="cnt">—</span></div>
+  <div class="row"><span class="lab">Progress</span><span class="cnt" id="cnt">—</span></div>
   <div class="bar"><span id="barfill" style="width:0%"></span></div>
   <div class="tools">
     <button class="btn" id="reset">Reset all</button>
@@ -77,7 +77,7 @@
 
 <footer>
   <p><a href="index.html">&larr; To-dos</a> &middot; <a href="calendar.html">Full calendar</a> &middot; <a href="meet-and-greet.html">Thursday sheet</a></p>
-  <p>Transcribed from the school's <em>Kindergarten Supply List 2026-2027</em>. Ticks reflect what was bought as of 17 August — adjust as you go.</p>
+  <p>Transcribed from the school's <em>Kindergarten Supply List 2026-2027</em>. Starts empty — tick things off as you go.</p>
 </footer>
 
 </div>
@@ -85,38 +85,38 @@
 <script>
 const ITEMS = [
   // group, id, text, note, default-ticked
-  ['must','backpack','Backpack','Large enough for a large binder, lunch box and water bottle. The list’s own tip: pick one with a connected lunch box and a spill-proof water bottle.',true],
+  ['must','backpack','Backpack','Large enough for a large binder, lunch box and water bottle. The list’s own tip: pick one with a connected lunch box and a spill-proof water bottle.',false],
   ['must','lunchbox','Lunch box','Lunch itself is free and provided by CPS — but useful for snacks and for days you’d rather pack.',false],
-  ['must','bottle','Spill-proof water bottle','',true],
+  ['must','bottle','Spill-proof water bottle','',false],
   ['must','shoes','Inside shoes to keep at school','No flip-flops. Required specifically for Ms. Colletti’s room — the list names Shah, Mangelsdorf and Colletti.',false],
 
-  ['contrib','kleenex','2 boxes Kleenex','',true],
-  ['contrib','ziplocq','1 box quart-size Ziploc bags','',true],
-  ['contrib','ziplocg','1 box gallon-size Ziploc bags','',true],
-  ['contrib','clorox','2 containers Clorox wipes','',true],
-  ['contrib','handwipes','2 antibacterial hand wipes','',true],
-  ['contrib','sanitizer','1 bottle hand sanitizer','',true],
-  ['contrib','bandaids','1 box Band-Aids, assorted sizes','',true],
-  ['contrib','pouches','Scotch Thermal Pouches 8½ × 11 — pack of 100','THERMAL ONLY, per the list.',true],
+  ['contrib','kleenex','2 boxes Kleenex','',false],
+  ['contrib','ziplocq','1 box quart-size Ziploc bags','',false],
+  ['contrib','ziplocg','1 box gallon-size Ziploc bags','',false],
+  ['contrib','clorox','2 containers Clorox wipes','',false],
+  ['contrib','handwipes','2 antibacterial hand wipes','',false],
+  ['contrib','sanitizer','1 bottle hand sanitizer','',false],
+  ['contrib','bandaids','1 box Band-Aids, assorted sizes','',false],
+  ['contrib','pouches','Scotch Thermal Pouches 8½ × 11 — pack of 100','THERMAL ONLY, per the list.',false],
 
   ['home','towels','2 rolls paper towels','',false],
   ['home','babywipes','2 containers baby wipes','',false],
 
-  ['box','folders','4 heavy-duty 2-pocket plastic folders','2 red, 2 green.',true],
-  ['box','pencils','1 box pre-sharpened Ticonderoga pencils','',true],
-  ['box','glue','10 small glue sticks, 7 g','',true],
-  ['box','scissors','1 pair children’s scissors','',true],
-  ['box','crayons','2 boxes Crayola crayons, 24-pack regular size','',true],
-  ['box','expoblack','1 box skinny black dry-erase EXPO markers','',true],
-  ['box','expocolor','1 box chisel-tip multi-coloured dry-erase EXPO markers','',true],
-  ['box','copypaper','3 reams white copy paper','500 count each.',true],
-  ['box','cardwhite','1 ream white cardstock','',true],
-  ['box','cardcolor','1 ream multi-colour cardstock','',true],
-  ['box','broad','1 box Crayola broad markers','',true],
-  ['box','thin','1 box Crayola thin markers','',true],
-  ['box','pencilscol','1 box erasable coloured pencils','',true],
-  ['box','index','1 pack index cards','3 × 5, plain, white, 100 count.',true],
-  ['box','construction','Construction paper','9 × 12, assorted colours, 50 count.',true],
+  ['box','folders','4 heavy-duty 2-pocket plastic folders','2 red, 2 green.',false],
+  ['box','pencils','1 box pre-sharpened Ticonderoga pencils','',false],
+  ['box','glue','10 small glue sticks, 7 g','',false],
+  ['box','scissors','1 pair children’s scissors','',false],
+  ['box','crayons','2 boxes Crayola crayons, 24-pack regular size','',false],
+  ['box','expoblack','1 box skinny black dry-erase EXPO markers','',false],
+  ['box','expocolor','1 box chisel-tip multi-coloured dry-erase EXPO markers','',false],
+  ['box','copypaper','3 reams white copy paper','500 count each.',false],
+  ['box','cardwhite','1 ream white cardstock','',false],
+  ['box','cardcolor','1 ream multi-colour cardstock','',false],
+  ['box','broad','1 box Crayola broad markers','',false],
+  ['box','thin','1 box Crayola thin markers','',false],
+  ['box','pencilscol','1 box erasable coloured pencils','',false],
+  ['box','index','1 pack index cards','3 × 5, plain, white, 100 count.',false],
+  ['box','construction','Construction paper','9 × 12, assorted colours, 50 count.',false],
 
   ['opt','magnets','Strong magnets','Requested by all four kindergarten classrooms.',false],
 
@@ -126,7 +126,7 @@ const ITEMS = [
 // not applicable to Ms. Colletti's room, shown for completeness
 const NA = [['opt','Clear sheet protectors','Only requested by Ms. Pema and Ms. Shah — not Ms. Colletti’s room.']];
 
-const KEY='pk-supplies-v1';
+const KEY='pk-supplies-v2';
 let state={};
 try{ state=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ state={}; }
 
