@@ -19,6 +19,7 @@
   <li><a href="index.html">&larr; To-dos</a></li>
   <li><a href="meet-and-greet.html">Thursday sheet</a></li>
   <li><a href="supplies.html">Supply checklist</a></li>
+  <li><a href="classroom.html">Room 002</a></li>
   <li><a href="#rhythm" class="here">Daily rhythm</a></li>
   <li><a href="#week">Weekly activities</a></li>
   <li><a href="#year">Month by month</a></li>
@@ -37,8 +38,9 @@
       <ul class="tl">
         <li><span class="t">7:30–8:45</span><span class="d">Apollo before-care<small>Drop off at Door 3, main building</small></span></li>
         <li><span class="t">8:45</span><span class="d">School begins<small>Mrs. Colletti, Room 002B, Modular Building</small></span></li>
-        <li><span class="t">10:00–10:30</span><span class="d">Recess, then lunch<small>Free and provided by CPS. First block eats at 10:30.</small></span></li>
+        <li><span class="t">10:52–11:50</span><span class="d">Lunch, in the Modular Building cafeteria<small>Free CPS lunch, or a packed lunch from home</small></span></li>
         <li><span class="t">3:45</span><span class="d">SMA coordinators collect him from the classroom<small>Snack in the main cafeteria, meets his instructor there</small></span></li>
+        <li><span class="t">12:48–1:46</span><span class="d">Special-area class<small>Depends on the rotation letter. Library runs 1:46–2:44 instead.</small></span></li>
         <li><span class="t">4:00–5:00</span><span class="d">Enrichment class<small>A different one each day — see below</small></span></li>
         <li><span class="t">5:00</span><span class="d">SMA escorts him back to Apollo<small>Or collect him directly at Main Building Door 1 on McLean, if you are not using aftercare that day</small></span></li>
         <li><span class="t">until 6:00</span><span class="d">Apollo aftercare<small>Pick up at the modular building. 6:00 is the hard stop.</small></span></li>
@@ -50,7 +52,7 @@
       <ul class="tl">
         <li><span class="t">7:30–8:45</span><span class="d">Apollo before-care</span></li>
         <li><span class="t">8:45</span><span class="d">School begins</span></li>
-        <li><span class="t">10:00–10:30</span><span class="d">Recess, then lunch</span></li>
+        <li><span class="t">10:52–11:50</span><span class="d">Lunch, Modular Building cafeteria</span></li>
         <li><span class="t">3:45</span><span class="d">Collected from class, straight to Apollo aftercare<small>Confirmed — someone takes him every day, Fridays included</small></span></li>
         <li><span class="t">until 6:00</span><span class="d">Apollo aftercare<small>Pick up at the modular building</small></span></li>
       </ul>
@@ -79,7 +81,19 @@
   <div class="callout">
     <p><span class="h">Essential subjects run on a six-day A–F rotation, not weekdays</span>
     PE, art, music, Spanish, library and technology cycle A→F across school days, so a day off never costs the same subject twice. The letter for each day is in the grids below — <strong>the first day, Aug 24, is Day A</strong>.</p>
-    <p>What's still missing is the mapping: <strong>which letter means which subject.</strong> Pulaski's rotation form leaves those fields blank for each homeroom to fill in, so Ms. Colletti is the one who can tell you which day needs gym shoes and which needs library books. Letters are shown through <strong>Jan 28</strong> — that's as far as the published Semester 1 calendar goes; Semester 2's is distributed at the start of the semester.</p>
+    <p>Mrs. Colletti has now given the mapping for Room 002:</p>
+    <table style="margin-top:10px">
+      <thead><tr><th>Day</th><th>Special</th><th>Time</th><th>Bring</th></tr></thead>
+      <tbody>
+        <tr><td><strong>A</strong></td><td>Music</td><td class="num">12:48–1:46</td><td></td></tr>
+        <tr><td><strong>B</strong></td><td>Library</td><td class="num">1:46–2:44</td><td>Return library books</td></tr>
+        <tr><td><strong>C</strong></td><td>Spanish</td><td class="num">12:48–1:46</td><td></td></tr>
+        <tr><td><strong>D</strong></td><td>Art</td><td class="num">12:48–1:46</td><td></td></tr>
+        <tr><td><strong>E</strong></td><td>Technology</td><td class="num">12:48–1:46</td><td></td></tr>
+        <tr><td><strong>F</strong></td><td>P.E.</td><td class="num">12:48–1:46</td><td>Shoes he can run in</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px">Note Library is the odd one out on timing. Letters are shown through <strong>Jan 28</strong> — as far as the published Semester 1 calendar goes; Semester 2's is distributed at the start of the term. Mrs. Colletti also flags the rotation day in her weekly newsletter.</p>
   </div>
 
   <div class="callout stop">
@@ -95,7 +109,7 @@
     <span><i class="sw" style="background:var(--stop-soft)"></i> No school</span>
     <span><i class="sw" style="background:var(--off)"></i> Weekend</span>
     <span><i class="sw" style="border-color:var(--accent);border-width:2px"></i> Milestone</span>
-    <span><i class="sw" style="background:var(--accent-soft)"></i> A–F rotation letter</span>
+    <span><i class="sw" style="background:var(--accent-soft)"></i> A–F letter + special</span>
     <span><i class="sw" style="background:var(--mon)"></i> Enrichment class</span>
   </div>
   <div class="months" id="months"></div>
@@ -226,6 +240,7 @@ const EV = {
   '2027-06-22':[{t:'Emergency day'}],
 };
 
+const SPECIALS = {A:'Music',B:'Library',C:'Spanish',D:'Art',E:'Technology',F:'P.E.'};
 const SMA = {1:{n:'Happy Hands',c:'mon'},2:{n:'Piano',c:'tue'},3:{n:'Jr. Hip Hop',c:'wed'},4:{n:'Drawing',c:'thu'}};
 const SMA_FROM='2026-08-31', SMA_TO='2026-12-03';
 
@@ -282,6 +297,7 @@ months.forEach(([y,m])=>{
     let inner='<div class="dn"><span>'+day+'</span>';
     if(LTR[k]) inner+='<span class="ltr">'+LTR[k]+'</span>';
     inner+='</div>';
+    if(LTR[k] && SPECIALS[LTR[k]]) inner+='<span class="spc">'+SPECIALS[LTR[k]]+'</span>';
     if(isOff && inTerm && !we) inner+='<span class="offlab">'+OFF[k]+'</span>';
     evs.forEach(e=>inner+='<span class="ev'+(e.b?' b':'')+'">'+e.t+'</span>');
     if(!we && !isOff && inTerm && k>=SMA_FROM && k<=SMA_TO && SMA[dow])

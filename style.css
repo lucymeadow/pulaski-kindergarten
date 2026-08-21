@@ -137,6 +137,7 @@ a{color:var(--accent)}
   display:flex;justify-content:space-between;align-items:center;gap:4px}
 .cell .ltr{font-size:.63rem;font-weight:800;color:var(--accent);background:var(--accent-soft);
   border-radius:4px;padding:1px 5px;letter-spacing:.03em}
+.cell .spc{display:block;margin-top:2px;font-size:.68rem;font-weight:650;color:var(--accent);letter-spacing:.01em}
 .cell .ev{display:block;margin-top:3px;line-height:1.3;color:var(--muted)}
 .cell .ev.b{color:var(--ink);font-weight:650}
 .cell .offlab{display:block;margin-top:3px;color:var(--stop);font-weight:650;line-height:1.28}

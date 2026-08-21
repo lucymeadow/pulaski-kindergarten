@@ -24,7 +24,8 @@
 </div>
 
 <nav><ul>
-  <li><a href="meet-and-greet.html">Thursday sheet &rarr;</a></li>
+  <li><a href="classroom.html">Room 002 &rarr;</a></li>
+  <li><a href="meet-and-greet.html">Thursday sheet</a></li>
   <li><a href="supplies.html">Supply checklist</a></li>
   <li><a href="calendar.html">Full calendar &rarr;</a></li>
   <li><a href="#week">This week</a></li>
@@ -61,7 +62,8 @@
     <p><span class="h">Doors — confirmed</span>
     <strong>Morning: Door 3, main building.</strong> That's the Apollo before-care drop-off, and since Will is in before-care every weekday it's his entrance every day.
     <strong>Afternoon: collected from the modular building</strong>, where his classroom is.</p>
-    <p>So he enters through one building and leaves from the other. The only thing still unconfirmed is the regular 8:45 drop-off and 3:45 dismissal doors for a day when he <em>isn't</em> using Apollo — which, given he's enrolled five days a week at both ends, may never come up.</p>
+    <p>So he enters through one building and leaves from the other. For a day he <em>skips</em> before-care, Mrs. Colletti says kindergarten uses <strong>Door 1, by the playground on the Leavitt side</strong>, with staff supervision from 8:20 and a Leavitt-side Kiss &amp; Go for driving.</p>
+    <p>⚠️ One loose end: ChicagoSMA describes the 5 PM pickup as <em>"Main Building Door 1 on McLean"</em> — a different side of the building from the Door 1 Mrs. Colletti names. Both can't be right. It only matters if you ever collect him straight from an SMA class rather than from aftercare.</p>
   </div>
 
   <div class="card">
@@ -69,8 +71,9 @@
     <table>
       <tr><td class="num">7:30–8:45 AM</td><td>Apollo before-care — starts today, Monday to Friday. Drop off at <strong>Door 3, main building</strong>.</td></tr>
       <tr><td class="num">8:45 AM</td><td><strong>School begins</strong> — Room 002B, Modular Building</td></tr>
-      <tr><td class="num">~9:00 AM</td><td>FOP BooHoo/Yahoo Breakfast, main building courtyard. <em>Parents only</em> — Will is in class. Drop him at the modular first, then walk over.</td></tr>
-      <tr><td class="num">10:00–10:30</td><td>Recess, then lunch. Lunch is free and provided by CPS.</td></tr>
+      <tr><td class="num">~9:00 AM</td><td>FOP BooHoo/Yahoo Breakfast, main building courtyard. <em>Parents only</em> — Will stays in class. Mrs. Colletti says the breakfast follows immediately after the first-day settling-in.</td></tr>
+      <tr><td class="num">10:52–11:50</td><td>Lunch in the <strong>Modular Building cafeteria</strong> — free CPS lunch or packed from home</td></tr>
+      <tr><td class="num">12:48–1:46</td><td>Special-area class. <strong>Day A is Music</strong> on the first day.</td></tr>
       <tr><td class="num">3:45 PM</td><td>School ends. SMA coordinators collect Modular Building kids <strong>from the classroom</strong> — Will doesn't cross to the main cafeteria alone.</td></tr>
       <tr><td class="num">4:00–5:00 PM</td><td>Hip Hop Dance Camp (Aug 24–27, already paid)</td></tr>
       <tr><td class="num">5:00 PM</td><td>SMA escorts him back to Apollo aftercare</td></tr>
@@ -81,7 +84,7 @@
   <div class="card">
     <h3>Pack the night before</h3>
     <ul class="tasks" id="packlist"></ul>
-    <p class="meta" style="margin:14px 0 0">Lunch does not need packing — CPS provides free breakfast, lunch and snacks to all students. But note the first lunch block eats at <strong>10:30 AM</strong>, so breakfast matters and he'll be hungry well before 3:45.</p>
+    <p class="meta" style="margin:14px 0 0">Lunch doesn't need packing — it's free — but <strong>the afternoon snack does</strong>. Mrs. Colletti is explicit that the school provides no snack, so one has to come from home every day. Kindergarten eats lunch <strong>10:52–11:50</strong>, earlier than I'd originally read from the principal's letter.</p>
   </div>
 </section>
 
@@ -215,6 +218,7 @@
     <table>
       <tbody>
         <tr><td>Pulaski main office</td><td class="num">(773) 534-4390</td></tr>
+        <tr><td><strong>Modular Office</strong> — urgent messages to Mrs. Colletti, early dismissal</td><td class="num">773-534-4395</td></tr>
         <tr><td>Apollo before/after care</td><td class="num">855-543-7277 · office [at] apolloafterschool.com<br><a href="https://apollo-pulaski.jumbula.com/">apollo-pulaski.jumbula.com</a> — login saved</td></tr>
         <tr><td>ChicagoSMA enrichment</td><td class="num">info [at] chicagosma.com</td></tr>
         <tr><td>Aspen help — Ms. Colon, parent resource coordinator</td><td class="num">nnavacolon [at] cps.edu</td></tr>
@@ -275,6 +279,15 @@ const TASKS = [
     { t:"ChicagoSMA — he is an Apollo child, escort at 5:00", n:"Their policy is to escort Apollo kids back to aftercare rather than release them, but only if they know he's one.", pri:"now", done:false },
     { t:"Apollo — arrives 5:00 Mon–Thu, 3:45 Fri", n:"Confirmed with Apollo, along with the doors and the daily handoff.", done:true },
   ]},
+  { group:"From Mrs. Colletti's welcome letter", meta:"Three of these are on no supply list — they come only from her letter.", items:[
+    { t:"Send a complete change of clothes in a labelled Ziplock bag", n:"Her words: accidents happen, especially while little ones adjust to a new environment.", pri:"now", done:false },
+    { t:"Send one white cotton T-shirt, room to grow, in a labelled Ziplock bag", n:"She tie-dyes these for field trips. They stay at school and come home after the Step-Up Celebration.", pri:"now", done:false },
+    { t:"Pack an afternoon snack every single day", n:"The school does not provide one. Separate from the nut-free SMA snack on Mon–Thu, so he may need two.", pri:"now", done:false },
+    { t:"Label everything with his name", n:"Water bottles, shoes, lunchbox, jackets, sweaters. She suggests clothing tags, a stamp, or iron-on labels.", done:false },
+    { t:"Complete and return all required CPS forms", n:"Plus the Parent Questionnaire and Student Information forms, due within the first two weeks of school. This may be where the health paperwork sits — worth checking as you go.", pri:"now", done:false },
+    { t:"Give Mrs. Colletti your current email and mobile number", n:"She asks for this directly — she sends informal updates by email and will text or call if something needs immediate attention.", done:false },
+    { t:"Practise the dismissal check-out with Will", n:"Before leaving he must look at her, say goodbye, and point to whoever is collecting him. If he runs straight to you, she asks that you send him back.", done:false },
+  ]},
   { group:"Shopping", meta:"School supplies are bought. Four items left, plus two to find at home.", items:[
     { t:"Buy the classroom contribution items", n:"Kleenex, Ziplocs, Clorox wipes, hand wipes, hand sanitizer, Band-Aids, thermal pouches — all done.", done:true },
     { t:"Buy a lunch box", n:"Needs to fit the backpack alongside a large binder and water bottle.", pri:"now", done:false },
@@ -291,7 +304,7 @@ const TASKS = [
     { t:"Log into Aspen and confirm the placement", n:"Done — placement confirmed and Student ID retrieved.", done:true },
     { t:"Pay the $150 school fee", n:"Paid via ePay, well ahead of both the Sept 15 and Sept 30 deadlines.", done:true },
     { t:"Reply to Ms. Colletti with Will's after-school schedule", n:"Sent, including the SMA activities.", done:true },
-    { t:"Ask Ms. Colletti for the A–F letter-day subject mapping", n:"Pulaski's 6-day rotation calendar is published but the letter-to-subject fields are blank — each homeroom fills its own. Without it you won't know which day is PE (gym shoes) or library (return books).", done:false },
+    { t:"Ask Ms. Colletti for the A–F letter-day subject mapping", n:"Got it in her welcome letter. A Music · B Library · C Spanish · D Art · E Technology · F P.E. Marked on every day of the <a href='calendar.html'>calendar</a>.", done:true },
     { t:"Use the Aspen help Google Form rather than emailing cold", n:"There's a dedicated form for new accounts, resets and adding a sibling, linked in the Aug 11 email.", done:false },
     { t:"Check the school site's supply-list page against the list we have", n:"Confirms the kindergarten list is the current version.", done:false },
     { t:"Attend New Family Orientation and the supply drop-off", n:"Done — supplies delivered and Mrs. Colletti met in person.", done:true },
@@ -325,7 +338,8 @@ const PACK = [
   { t:"Backpack", n:"Must fit a large binder, lunch box and water bottle.", done:false },
   { t:"Inside shoes", n:"Required for Ms. Colletti's room, no flip-flops. These stay at school.", done:false },
   { t:"Spill-proof water bottle", done:false },
-  { t:"Nut-free snack", n:"For the 4 PM camp. Required all four days this week.", done:false },
+  { t:"Afternoon snack for the school day", n:"The school provides none — Mrs. Colletti asks for one every day.", done:false },
+  { t:"Nut-free snack for the 4 PM camp", n:"Required all four days of camp week. Possibly a second, separate snack from the classroom one.", done:false },
   { t:"Lunch box", n:"Lunch itself is free and provided, but the list specifies a backpack that fits one — handy for snacks and for days you'd rather pack.", done:false },
   { t:"Supplies, if not dropped off on Aug 20", done:false },
 ];
