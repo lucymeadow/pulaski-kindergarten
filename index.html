@@ -43,6 +43,12 @@
   <div class="bar"><span id="barfill" style="width:0%"></span></div>
 </div>
 
+<div class="callout stop">
+  <p><span class="h">⚠️ Health forms — the one thing with real teeth</span>
+  The <strong>physical, immunisation records and vision exam are due Oct 15</strong>, and Illinois's stated consequence for missing them is <strong>exclusion from school</strong>. The <strong>dental exam is due May 15</strong>. All still outstanding; Will's dad is checking.</p>
+  <p>None of this appeared in any school email, the supply list, or either registration confirmation — it surfaced only because the paperwork was unaccounted for. Book the physical early: September is the busiest month of the year for paediatric appointments. Free care is available through the CPS Children and Family Benefits Unit — <strong>Healthy CPS Hotline, 773-553-5437</strong>.</p>
+</div>
+
 <section id="week">
   <h2><span class="n">1</span> To-dos</h2>
   <p class="lede">Most of the pre-term list is done. What's left is mainly things only the school or the after-school providers can answer.</p>
@@ -219,6 +225,7 @@
       <tbody>
         <tr><td>Pulaski main office</td><td class="num">(773) 534-4390</td></tr>
         <tr><td><strong>Modular Office</strong> — urgent messages to Mrs. Colletti, early dismissal</td><td class="num">773-534-4395</td></tr>
+        <tr><td><strong>Healthy CPS Hotline</strong> — free exams, health form help</td><td class="num">773-553-5437</td></tr>
         <tr><td>Apollo before/after care</td><td class="num">855-543-7277 · office [at] apolloafterschool.com<br><a href="https://apollo-pulaski.jumbula.com/">apollo-pulaski.jumbula.com</a> — login saved</td></tr>
         <tr><td>ChicagoSMA enrichment</td><td class="num">info [at] chicagosma.com</td></tr>
         <tr><td>Aspen help — Ms. Colon, parent resource coordinator</td><td class="num">nnavacolon [at] cps.edu</td></tr>
@@ -255,9 +262,17 @@
 
 <script>
 const TASKS = [
+  { group:"Health forms — hard deadlines",
+    meta:"Will's dad is checking on these. Illinois enforces them: a child without a physical and immunisation records on file can be excluded from school. Healthy CPS Hotline: 773-553-5437.",
+    items:[
+    { t:"Physical exam — due Oct 15", n:"Exclusion from school is the stated consequence for missing this. Book the appointment well before the deadline; September gets busy for paediatricians.", pri:"now", done:false },
+    { t:"Immunisation records — due Oct 15", n:"Same deadline and same consequence as the physical. Usually comes from the same appointment.", pri:"now", done:false },
+    { t:"⚠️ Vision exam — due Oct 15", n:"Required for kindergarten entry in Illinois, due on enrolment or by Oct 15 at the latest. <strong>This one wasn't on your list of three</strong> — worth confirming whether it's needed or already on file.", pri:"now", done:false },
+    { t:"Dental exam — due May 15", n:"Later deadline than the others, but it's a kindergarten year requirement. Easy to forget until spring.", done:false },
+  ]},
   { group:"Call the school office", meta:"(773) 534-4390 — best done Monday or Tuesday. One call clears the biggest unknown plus three smaller ones.", items:[
     { t:"Ask which door Will uses for morning drop-off and 3:45 dismissal", n:"Answered: Door 3 in the main building for the 7:30 Apollo drop-off; collected from the modular building in the afternoon.", done:true },
-    { t:"Check what health paperwork is on file, and what's outstanding", n:"Illinois requires a physical exam and immunisation records for kindergarten entry, plus a vision exam, with a dental exam later in the year — and schools can exclude children who haven't submitted them, usually around mid-October. <strong>None of the emails, the supply list, or either registration confirmation mentions any of this.</strong> Probably handled at enrolment, but it's the highest-consequence thing we can't verify. Get dates for anything missing.", pri:"now", done:false },
+    { t:"Check what health paperwork is on file, and what's outstanding", n:"Checked — the physical, dental and immunisation records are all still outstanding. See the health forms group below.", done:true },
     { t:"Ask whether the principal's opening-day logistics letter has gone out", n:"It's the official source for entry and exit doors. If it's coming Friday, the question above answers itself.", done:false },
     { t:"Confirm Will's teacher and room", n:"Confirmed in person at the supply drop-off — Mrs. Colletti, Room 002B.", done:true },
     { t:"Get Will's Student ID number", n:"Got it. Deliberately not published here — the ePay portal takes payments with the Student ID and no login, so it lives in the private Desktop folder instead.", done:true },
@@ -284,9 +299,7 @@ const TASKS = [
     { t:"Send one white cotton T-shirt, room to grow, in a labelled Ziplock bag", n:"She tie-dyes these for field trips. They stay at school and come home after the Step-Up Celebration.", pri:"now", done:false },
     { t:"Pack an afternoon snack every single day", n:"The school does not provide one. Separate from the nut-free SMA snack on Mon–Thu, so he may need two.", pri:"now", done:false },
     { t:"Label everything with his name", n:"Water bottles, shoes, lunchbox, jackets, sweaters. She suggests clothing tags, a stamp, or iron-on labels.", done:false },
-    { t:"Submit the questionnaire form", n:"Done. The form collected student contact details — name, nickname, birthday, home address.", done:true },
-    { t:"Check whether that one form covered both forms she named", n:"Mrs. Colletti asks for a <em>Parent Questionnaire</em> <strong>and</strong> a <em>Student Information</em> form, both within the first two weeks. The one submitted looks like student information, so there may be a second still outstanding. Quick question for her.", pri:"now", done:false },
-    { t:"Complete and return all required CPS forms", n:"Separate from the two above. This may be where the health paperwork sits — worth checking as you go.", pri:"now", done:false },
+    { t:"Submit the Parent Questionnaire and Student Information forms", n:"Done — the one form covered both. Confirmed it is not the same as the required CPS health forms.", done:true },
     { t:"Give Mrs. Colletti your current email and mobile number", n:"She asks for this directly — she sends informal updates by email and will text or call if something needs immediate attention.", done:false },
     { t:"Practise the dismissal check-out with Will", n:"Before leaving he must look at her, say goodbye, and point to whoever is collecting him. If he runs straight to you, she asks that you send him back.", done:false },
   ]},
